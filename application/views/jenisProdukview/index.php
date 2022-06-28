@@ -51,9 +51,28 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <!-- Info boxes -->
-                    hallo
-                    <!-- /.row -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">id Jenis produk</th>
+                                <th scope="col">Nama Jenis Produk</th>
+                                <th> Action </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($jenis_produk as $jp) { ?>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td><?php echo $jp->id ?></td>
+                                    <td><?php echo $jp->nama ?></td>
+                                    <td><button type="button" class="btn btn-danger">Delete</button>
+                                        <button type="button" class="btn btn-info">update</button>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
 
                     <div class="row">
                         <div class="col-md-12">

@@ -17,7 +17,7 @@ class admin extends CI_Controller {
 	}
 
 	function viewjenisproduk(){
-		$this->load->view('jenisProduk/index.php');
+		$this->load->view('jenisProdukview/index.php');
 	}
 
 	function viewpembelian(){
