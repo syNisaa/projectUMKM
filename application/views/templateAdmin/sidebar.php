@@ -35,7 +35,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="<?php echo base_url()."index.php/admin/dashboard" ?>" class="nav-link">
+                    <a href="<?php echo base_url() . "index.php/admin/dashboard" ?>" class="nav-link">
                         <p>Dashboard </p>
                     </a>
                 </li>
@@ -68,7 +68,7 @@
                         </li>
                     </ul> -->
                 </li>
-                
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
@@ -80,18 +80,18 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?php echo base_url()."index.php/jenisproduk/jenisproduk" ?>" class="nav-link">
+                            <a href="<?php echo base_url() . "index.php/jenisproduk/jenisproduk" ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Jenis Produk</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?php echo base_url()."index.php/admin/viewproduk" ?>" class="nav-link">
+                            <a href="<?php echo base_url() . "index.php/admin/viewproduk" ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Produk</p>
                             </a>
                         </li>
-                        
+
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -104,17 +104,17 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?php echo base_url()."index.php/admin/viewpesanan" ?>" class="nav-link">
+                            <a href="<?php echo base_url() . "index.php/admin/viewpesanan" ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Pesanan</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/charts/flot.html<?php echo base_url()."index.php/admin/viewpembelian" ?>ass="far fa-circle nav-icon"></i>
+                            <a href="pages/charts/flot.html<?php echo base_url() . "index.php/admin/viewpembelian" ?>ass=" far fa-circle nav-icon"></i>
                                 <p>Pembelian</p>
                             </a>
                         </li>
-                        
+
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -127,15 +127,21 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?php echo base_url()."index.php/admin/viewsuplier" ?>" class="nav-link">
+                            <a href="<?php echo base_url() . "index.php/admin/viewsuplier" ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Suplier</p>
                             </a>
                         </li>
-                        
+
                     </ul>
                 </li>
-                
+
+                <li class="nav-item">
+                    <br>
+                    <button class="btn btn-outline-danger" style="width: 100%;"> Logout</button>
+
+                </li>
+
 
             </ul>
         </nav>

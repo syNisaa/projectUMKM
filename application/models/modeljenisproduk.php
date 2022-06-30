@@ -6,4 +6,17 @@ class modeljenisproduk extends CI_Model{
         return $this->db->get('jenis_produk');
     }
     
+    function hapusjenis($hapus,$table){
+        $this->db->where($hapus);
+        $this->db->delete($table);
+    } 
+
+    public function createjenis(){
+        $data = array(
+            'id'=>"",
+            'nama'=>$this->input->post('nama')
+        );
+        $this->db->insert('jenis_produk', $data);
+        header("location",base_url().'index.php/jenisproduk/jenisproduk');
+    }
 }

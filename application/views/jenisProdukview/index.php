@@ -50,7 +50,7 @@
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
+                <div class="container-fluid"> <a href = "<?php echo base_url() . "index.php/jenisproduk/tambah" ?>" ><button type="button" class="btn btn-outline-success">Tambah Data</button></a><br>
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -60,17 +60,17 @@
                                 <th> Action </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <?php foreach ($jenis_produk as $jp) { ?>
+                        <tbody> 
+                            <?php $a = 1; foreach ($jenis_produk as $jp) { ?>
                                 <tr>
-                                    <th scope="row"></th>
+                                    <th scope="row"><?php echo $a ?></th>
                                     <td><?php echo $jp->id ?></td>
                                     <td><?php echo $jp->nama ?></td>
-                                    <td><button type="button" class="btn btn-danger">Delete</button>
+                                    <td><?php echo anchor('index.php/jenisproduk/hapus/'.$jp->id,'<button type="button" class="btn btn-danger">Delete</button>'); ?>
                                         <button type="button" class="btn btn-info">update</button>
                                     </td>
                                 </tr>
-                            <?php } ?>
+                            <?php $a++; } ?>
                         </tbody>
                     </table>
 

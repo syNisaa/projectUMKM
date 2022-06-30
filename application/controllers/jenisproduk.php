@@ -14,5 +14,20 @@ class jenisproduk extends CI_Controller {
 		// echo $data;
     }
 
+    function hapus($id){
+        $hapus = array('id' => $id);
+        $this->modeljenisproduk->hapusjenis($hapus,'jenis_produk');
+        redirect('index.php/jenisproduk/jenisproduk');
+    }
+
+    public function tambah(){
+        $this->load->view('jenisprodukview/create.php');
+    }
+
+    public function create()
+	{
+		$this->modeljenisproduk->createjenis();
+		redirect('index.php/jenisproduk/jenisproduk');
+	}
  
 }

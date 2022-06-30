@@ -7,6 +7,7 @@ class admin extends CI_Controller {
 		parent::__construct();		
 		$this->load->model('modeluser');
 	}
+	
  
 	function dashboard(){
 		$this->load->view('templateAdmin/index.php');
