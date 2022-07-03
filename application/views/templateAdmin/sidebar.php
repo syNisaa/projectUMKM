@@ -138,7 +138,7 @@
 
                 <li class="nav-item">
                     <br>
-                    <button class="btn btn-outline-danger" style="width: 100%;"> Logout</button>
+                    <a href="<?php echo base_url() . "index.php/landing/logout" ?>"><button class="btn btn-outline-danger" style="width: 100%;"> Logout</button></a>
 
                 </li>
 

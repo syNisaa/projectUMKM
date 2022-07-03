@@ -9,11 +9,17 @@ class landing extends CI_Controller
         parent::__construct();
         $this->load->model('modeljenisproduk');
         $this->load->model('modeluser');
+        $this->load->model('modelproduk');
     }
 
     function index()
     {
         $data['jenis_produk'] = $this->modeljenisproduk->getjenisproduk()->result();
+        // $data['tas'] = $this->modelproduk->getwheredata(array('nama' => "tas"), 'produk')->result();
+        // $data['sepatu'] = $this->modelproduk->getwheredata(array('nama' => "sepatu"), 'produk')->result();
+        // $data['perhiasan'] = $this->modelproduk->getwheredata(array('nama' => "perhiasan"), 'produk')->result();
+        $data['produk'] = $this->modelproduk->getproduk()->result();
+
         $this->load->view('landing/index.php', $data);
         // echo $data;
     }

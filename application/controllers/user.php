@@ -10,7 +10,17 @@ class user extends CI_Controller {
  
 	function user(){
 		$data['users'] = $this->modeluser->getuser()->result();
-		$this->load->view('users/user.php',$data);
+		$this->load->view('users/index.php',$data);
 	}
+
+	function registrasiuser(){
+		$this->modeluser->createuser();
+	}
+
+	function hapus($id){
+        $hapus = array('id' => $id);
+        $this->modeluser->hapususer($hapus,'users');
+        redirect('index.php/user/user');
+    }
  
 }

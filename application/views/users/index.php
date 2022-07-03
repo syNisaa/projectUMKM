@@ -50,21 +50,33 @@
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
-                    <?php foreach ($jenis_produk as $jp) {?>
-                    <form action="<?php echo base_url('index.php/jenisproduk/update') ?>" method='POST' enctype="multipart/form-data">
-                        <div class="form-grup">
-                            <input type="hidden" class='form-control' name='id' value="<?php echo $jp->id ?> "><br>
-
-                            <label class='font-weight-bold'>Nama Jenis Produk</label>
-                            <input type="text" class='form-control' name='nama' value="<?php echo $jp->nama ?> "><br>
-
-                        </div>
-
-                        <input type='submit' class='btn btn-primary mt-4' name='submit' value="Simpan">
-
-                    </form>
-                    <?php } ?>
+                <div class="container-fluid"> <a href = "<?php echo base_url() . "index.php/jenisproduk/tambah" ?>" ><button type="button" class="btn btn-outline-success">Tambah Data</button></a><br>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">id User</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Status Pengguna</th>
+                                <th> Action </th>
+                            </tr>
+                        </thead>
+                        <tbody> 
+                            <?php $a = 1; foreach ($users as $u) { ?>
+                                <tr>
+                                    <th scope="row"><?php echo $a ?></th>
+                                    <td><?php echo $u->id ?></td>
+                                    <td><?php echo $u->username ?></td>
+                                    <td><?php echo $u->email ?></td>
+                                    <td><?php echo $u->role ?></td>
+                                    <td><?php echo anchor('index.php/user/hapus/'.$u->id,'<button type="button" class="btn btn-danger">Delete</button>'); ?>
+                                        
+                                    </td>
+                                </tr>
+                            <?php $a++; } ?>
+                        </tbody>
+                    </table>
 
                     <div class="row">
                         <div class="col-md-12">
