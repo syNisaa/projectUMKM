@@ -10,4 +10,12 @@ class modelproduk extends CI_Model{
         return $this->db->get_where($table,$where);
     }
     
+    
+	function detail($where,$table){		
+        return $this->db->get_where($table,$where);
+    }
+
+    function myorder($where,$table){
+        return $this->db->get_where($table,$where);
+    }
 }

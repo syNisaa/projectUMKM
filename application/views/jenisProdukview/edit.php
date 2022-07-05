@@ -51,19 +51,25 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <?php foreach ($jenis_produk as $jp) {?>
-                    <form action="<?php echo base_url('index.php/jenisproduk/update') ?>" method='POST' enctype="multipart/form-data">
-                        <div class="form-grup">
+                    <?php foreach ($jenis_produk as $jp) { ?>
+                        <form action="<?php echo base_url('index.php/jenisproduk/update') ?>" method='POST' enctype="multipart/form-data">
                             <input type="hidden" class='form-control' name='id' value="<?php echo $jp->id ?> "><br>
+                            <div class="form-grup">
 
-                            <label class='font-weight-bold'>Nama Jenis Produk</label>
-                            <input type="text" class='form-control' name='nama' value="<?php echo $jp->nama ?> "><br>
+                                <label class='font-weight-bold'>Nama Jenis Produk</label>
+                                <input type="text" class='form-control' name='nama' value="<?php echo $jp->nama ?> "><br>
 
-                        </div>
+                            </div>
+                            <div class="form-grup">
 
-                        <input type='submit' class='btn btn-primary mt-4' name='submit' value="Simpan">
+                                <label class='font-weight-bold'>Nama Jenis Produk</label>
+                                <input type="text" class='form-control' name='nama' value="<?php echo $jp->nama ?> "><br>
 
-                    </form>
+                            </div>
+
+                            <input type='submit' class='btn btn-primary mt-4' name='submit' value="Simpan">
+
+                        </form>
                     <?php } ?>
 
                     <div class="row">

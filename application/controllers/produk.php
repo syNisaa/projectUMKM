@@ -11,5 +11,6 @@ class produk extends CI_Controller {
 	function dashboard(){
 		$this->load->view('templateAdmin/index.php');
 	}
+
  
 }

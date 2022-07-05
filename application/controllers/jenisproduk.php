@@ -45,6 +45,7 @@ class jenisproduk extends CI_Controller
     function update(){
         $id = $this->input->post('id');
         $nama = $this->input->post('nama');
+
      
         $data = array(
             'nama' => $nama

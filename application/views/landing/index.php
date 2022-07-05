@@ -34,17 +34,25 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
+                        <a href="#" class="logo">
                             <img src="<?php echo base_url('assets/landing/assets/images/logo.png') ?>">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
+
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                            <?php foreach ($jenis_produk as $jp) { ?>
-                                <li class="scroll-to-section"><a href="#<?php echo $jp->nama ?>"><?php echo $jp->nama ?></a></li>
-                            <?php } ?>
 
+                            <li class="submenu">
+                                <a href="javascript:;">Produk</a>
+                                <ul>
+                                    <?php foreach ($jenis_produk as $jp) { ?>
+                                        <li class="scroll-to-section"><a href="#men"><?php echo $jp->nama ?></a></li>
+                                    <?php } ?>
+                                </ul>
+                            </li>
+
+                            <li class="scroll-to-section"><a href="#explore"><i>About Us</i></a></li>
                             <li class="scroll-to-section"><a href="<?php echo base_url() . "index.php/landing/formlogin" ?>">Login</a></li>
                         </ul>
                         <a class='menu-trigger'>
@@ -72,35 +80,35 @@
                                     <a href="#">Gabung Sekarang!</a>
                                 </div>
                             </div>
-                            <img src="<?php echo base_url('assets/landing/assets/images/left-banner-image.jpg')?>" alt="">
+                            <img src="<?php echo base_url('assets/landing/assets/images/left-banner-image.jpg') ?>" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="right-content">
                         <div class="row">
-                        <?php foreach ($jenis_produk as $jp)   {?>
-                        <div class="col-lg-6">
-                                <div class="right-first-image">
-                                    <div class="thumb">
-                                        <div class="inner-content">
-                                            <h4><?php echo $jp->nama;?></h4>
-                                            <span>Best <?php echo $jp->nama;?> In Indonesia</span>
-                                        </div>
-                                        <div class="hover-content">
-                                            <div class="inner">
-                                                <h4><?php echo $jp->nama;?></h4>
-                                                <p>Ayo! Cintai Produk Indonesia</p>
-                                                <div class="main-border-button">
-                                                    <a href="#<?php echo $jp->nama ?>"><?php echo $jp->nama ?></a>
+                            <?php foreach ($jenis_produk as $jp) { ?>
+                                <div class="col-lg-6">
+                                    <div class="right-first-image">
+                                        <div class="thumb">
+                                            <div class="inner-content">
+                                                <h4><?php echo $jp->nama; ?></h4>
+                                                <span>Best <?php echo $jp->nama; ?> In Indonesia</span>
+                                            </div>
+                                            <div class="hover-content">
+                                                <div class="inner">
+                                                    <h4><?php echo $jp->nama; ?></h4>
+                                                    <p>Ayo! Cintai Produk Indonesia</p>
+                                                    <div class="main-border-button">
+                                                        <a href="#<?php echo $jp->nama ?>"><?php echo $jp->nama ?></a>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <img src="<?php echo base_url('assets/landing/assets/images/baner-right-image-01.jpg') ?>">
                                         </div>
-                                        <img src="<?php echo base_url('assets/landing/assets/images/baner-right-image-01.jpg')?>">
                                     </div>
                                 </div>
-                            </div>
-                            <?php }?>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -110,38 +118,37 @@
     <!-- ***** Main Banner Area End ***** -->
 
     <!-- ***** Men Area Starts ***** -->
-        <section class="section" id="men" >
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="section-heading">
-                            <h2> <i> OurCollection</i></h2>
-                            <span><b>UFashion </b>| Produk Terbaik Produksi Dalam Negri</span>
-                        </div>
+    <section class="section" id="men">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-heading">
+                        <h2> <i> OurCollection</i></h2>
+                        <span><b>UFashion </b>| Produk Terbaik Produksi Dalam Negri</span>
                     </div>
                 </div>
             </div>
-            
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class=" men-item-carousel">
-                            <div class="owl-men-item owl-carousel">
-                                <?php foreach ($produk as $p) {?>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class=" men-item-carousel">
+                        <div class="owl-men-item owl-carousel">
+                            <?php foreach ($produk as $p) { ?>
                                 <div class="item">
                                     <div class="thumb">
                                         <div class="hover-content">
                                             <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                                <li><a href="<?php echo base_url() . "index.php/landing/detailproduk/" . $p->id ?>"><i class="fa fa-eye"></i></a></li>
+                                                <li><a href="<?php echo base_url() . "index.php/landing/formlogin" ?>"><i class="fa fa-sign-in"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="<?php echo base_url('assets/landing/assets/images/men-01.jpg') ?>" alt="">
+                                        <img src="<?php echo base_url('assets/gambar/' . $p->foto) ?>" alt="">
                                     </div>
                                     <div class="down-content">
-                                        <h4><?php echo $p->nama?></h4>
-                                        <span><b><small>Rp. </small></b><?php echo $p->harga_jual?></span>
+                                        <h4><?php echo $p->nama ?></h4>
+                                        <span><b><small>Rp. </small></b><?php echo $p->harga_jual ?></span>
                                         <ul class="stars">
                                             <li><i class="fa fa-star"></i></li>
                                             <li><i class="fa fa-star"></i></li>
@@ -151,8 +158,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <?php }?>
-                                <!-- <div class="item">
+                            <?php } ?>
+                            <!-- <div class="item">
                                     <div class="thumb">
                                         <div class="hover-content">
                                             <ul>
@@ -221,12 +228,12 @@
                                         </ul>
                                     </div>
                                 </div> -->
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
     <!-- ***** Men Area Ends ***** -->
 
 
@@ -280,90 +287,7 @@
     </section>
     <!-- ***** Explore Area Ends ***** -->
 
-    <!-- ***** Social Area Starts ***** -->
-    <section class="section" id="social">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading">
-                        <h2>Social Media</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row images">
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Fashion</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="<?php echo base_url('assets/landing/assets/images/instagram-01.jpg') ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>New</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="<?php echo base_url('assets/landing/assets/images/instagram-02.jpg') ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Brand</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="<?php echo base_url('assets/landing/assets/images/instagram-03.jpg') ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Makeup</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="<?php echo base_url('assets/landing/assets/images/instagram-04.jpg') ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Leather</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="<?php echo base_url('assets/landing/assets/images/instagram-05.jpg') ?>" alt="">
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="thumb">
-                        <div class="icon">
-                            <a href="http://instagram.com">
-                                <h6>Bag</h6>
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                        </div>
-                        <img src="<?php echo base_url('assets/landing/assets/images/instagram-06.jpg') ?>" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Social Area Ends ***** -->
+
 
     <!-- ***** Subscribe Area Starts ***** -->
     <div class="subscribe">
@@ -371,8 +295,8 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="section-heading">
-                        <h2>By Subscribing To Our Newsletter You Can Get 30% Off</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
+                        <h2>Follow Akun Media Sosial Kami!</h2>
+                        <span>Kalian Bisa Menjadi Suplier Di Website Kami! Ayo Cari Tahu Lebih Lengkapnya Di Instagram Dan Medsos Yang Lainn</span>
                     </div>
                     <form id="subscribe" action="" method="get">
                         <div class="row">
@@ -398,15 +322,15 @@
                     <div class="row">
                         <div class="col-6">
                             <ul>
-                                <li>Store Location:<br><span>Sunny Isles Beach, FL 33160, United States</span></li>
-                                <li>Phone:<br><span>010-020-0340</span></li>
-                                <li>Office Location:<br><span>North Miami Beach</span></li>
+                                <li>Store Location:<br><span>Jakarta Barat</span></li>
+                                <li>Phone:<br><span>0813-1212-4545</span></li>
+                                <li>Office Location:<br><span>Lenteng Agung</span></li>
                             </ul>
                         </div>
                         <div class="col-6">
                             <ul>
-                                <li>Work Hours:<br><span>07:30 AM - 9:30 PM Daily</span></li>
-                                <li>Email:<br><span>info@company.com</span></li>
+                                <li>Jam Kerja:<br><span>07:30 AM - 9:30 PM Daily</span></li>
+                                <li>Email:<br><span>indonesia@umkm.com</span></li>
                                 <li>Social Media:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
                             </ul>
                         </div>
@@ -428,25 +352,24 @@
                         </div>
                         <ul>
                             <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
-                            <li><a href="#">hexashop@company.com</a></li>
-                            <li><a href="#">010-020-0340</a></li>
+                            <li><a href="#">indonesia@umkm.com</a></li>
+                            <li><a href="#">0813-1212-4545</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <h4>Shopping &amp; Categories</h4>
                     <ul>
-                        <li><a href="#">Men’s Shopping</a></li>
-                        <li><a href="#">Women’s Shopping</a></li>
-                        <li><a href="#">Kid's Shopping</a></li>
+                        <?php foreach ($jenis_produk as $jp3) { ?>
+                            <li><a href="#"><?php echo $jp3->nama ?> Shopping</a></li>
+                        <?php } ?>
                     </ul>
                 </div>
                 <div class="col-lg-3">
                     <h4>Useful Links</h4>
                     <ul>
-                        <li><a href="#">Homepage</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Our Product</a></li>
                         <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
@@ -461,9 +384,9 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="under-footer">
-                        <p>Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved.
+                        <p>Copyright © 2022 UMKM-UFashion Indonesia 
 
-                            <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a>
+                            <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a> | By : Sistem Informasi05 | STT NURUL FIKRI ANGKATAN21
                         </p>
                         <ul>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
