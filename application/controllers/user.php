@@ -42,9 +42,8 @@ class user extends CI_Controller {
 
 	function myorder(){
 		$id = $this->session->userdata('id');
-		$where = array('jenis_id' =>  $this->session->userdata('id'));
-		// $data['pesanan'] = $this->modelproduk->getpesanan()->result();
-		$data['myorder'] = $this->modelproduk->myorder($where, 'produk')->result();
+		$where = array('users_id' =>  $id);
+		$data['myorder'] = $this->modelproduk->myorder($where, 'pesanan')->result();
 		$this->load->view('userlogin/myorder.php', $data);
 	}
 }

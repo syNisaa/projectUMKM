@@ -41,10 +41,11 @@
                         <!-- ***** Menu Start ***** -->
 
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="#men">Our Product</a></li>
+                            <li class="scroll-to-section"><a href="<?php echo base_url() . 'index.php/user/userpublik' ?>">Our Product</a></li>
 
                             <li class="scroll-to-section"><a href="#" class="active"><i>Your Order</i></a></li>
-                            <li class="scroll-to-section"><a href="#">Hallo, ,,,,!</a></li>
+                            <li class="scroll-to-section"><a href="#">Hallo, <?php echo $this->session->userdata('username') ?>!</a></li>
+                            <li class="scroll-to-section"><a href="<?php echo base_url() . 'index.php/landing/logout' ?>"><button class="btn btn-outline-danger">Logout</button></a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -108,36 +109,18 @@
     <section class="section" id="product">
         <div class="container"><br><br>
             <div class="row mt-5" style="margin-top: 10px">
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a><br>
+                <?php foreach ($myorder as $m) { ?>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Tanggal Pemesanan : <?php echo $m->tanggal;?></h5>
+                                <p class="card-text">Jumlah Pemesanan : <?php echo $m->jumlah?></p><br>
+                                <p class="card-text">Produk Id : <?php echo $m->produk_id?></p><br>
+                                <a href="#" class="btn btn-primary">Proses Pembelian</a><br>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Special title treatment</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-
+                <?php } ?>
 
             </div>
         </div>

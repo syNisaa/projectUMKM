@@ -35,12 +35,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Data Jenis Produk</h1>
+                            <h1 class="m-0">Data User Publik</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url() . "index.php/admin/dashboard" ?>">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Jenis Produk</li>
+                                <li class="breadcrumb-item active">User</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -50,7 +50,7 @@
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid"> <a href = "<?php echo base_url() . "index.php/jenisproduk/tambah" ?>" ><button type="button" class="btn btn-outline-success">Tambah Data</button></a><br>
+                <!-- <div class="container-fluid"> <a href="<?php echo base_url() . "index.php/jenisproduk/tambah" ?>"><button type="button" class="btn btn-outline-success">Tambah Data</button></a><br> -->
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -62,19 +62,29 @@
                                 <th> Action </th>
                             </tr>
                         </thead>
-                        <tbody> 
-                            <?php $a = 1; foreach ($users as $u) { ?>
+                        <tbody>
+                            <?php $a = 1;
+                            foreach ($users as $u) { ?>
                                 <tr>
                                     <th scope="row"><?php echo $a ?></th>
                                     <td><?php echo $u->id ?></td>
                                     <td><?php echo $u->username ?></td>
                                     <td><?php echo $u->email ?></td>
+                                    <td>
+                                        <?php if ($u->status == "1"){
+                                            echo "Aktif";
+                                        }else{
+                                            echo "Tidak Aktif";
+                                            
+                                        }?>
+                                    </td>
                                     <td><?php echo $u->role ?></td>
-                                    <td><?php echo anchor('index.php/user/hapus/'.$u->id,'<button type="button" class="btn btn-danger">Delete</button>'); ?>
-                                        
+                                    <td><?php echo anchor('index.php/user/hapus/' . $u->id, '<button type="button" class="btn btn-danger">Delete</button>'); ?>
+
                                     </td>
                                 </tr>
-                            <?php $a++; } ?>
+                            <?php $a++;
+                            } ?>
                         </tbody>
                     </table>
 

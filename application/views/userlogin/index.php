@@ -41,10 +41,11 @@
                         <!-- ***** Menu Start ***** -->
 
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="#men" class="active">Our Product</a></li>
+                            <li class="scroll-to-section"><a href="#" class="active">Our Product</a></li>
 
-                            <li class="scroll-to-section"><a href="#"><i>Your Order</i></a></li>
-                            <li class="scroll-to-section"><a href="#">Hallop, <?php echo $this->session->userdata('username') ?>!</a></li>
+                            <li class="scroll-to-section"><a href="<?php echo base_url().'index.php/user/myorder'?>"><i>Your Order</i></a></li>
+                            <li class="scroll-to-section"><a href="#">Hallo, <?php echo $this->session->userdata('username') ?>!</a></li>
+                            <li class="scroll-to-section"><a href="<?php echo base_url().'index.php/landing/logout'?>"><button class="btn btn-outline-danger">Logout</button></a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>

@@ -40,7 +40,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url() . "index.php/admin/dashboard" ?>">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Produk</li>
+                                <li class="breadcrumb-item active"> Produk</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -50,10 +50,46 @@
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
-                    <!-- Info boxes -->
-                    hallo
-                    <!-- /.row -->
+                <div class="container-fluid"> <a href="<?php echo base_url() . "index.php/produk/tambah" ?>"><button type="button" class="btn btn-outline-success">Tambah Data</button></a><br>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">id produk</th>
+                                <th scope="col">kode produk</th>
+                                <th scope="col">nama produk</th>
+                                <th scope="col">stok produk</th>
+                                <th scope="col">harga beli</th>
+                                <th scope="col">harga jual</th>
+                                <th scope="col">foto produk</th>
+                                <th scope="col">id jenis produk</th>
+                                <th scope="col">deskripsi produk</th>
+                                <th> Action </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $a = 1;
+                            foreach ($produk as $p) { ?>
+                                <tr>
+                                    <th scope="row"><?php echo $a ?></th>
+                                    <td><?php echo $p->id ?></td>
+                                    <td><?php echo $p->kode ?></td>
+                                    <td><?php echo $p->nama ?></td>
+                                    <td><?php echo $p->stok ?></td>
+                                    <td><?php echo $p->harga_beli ?></td>
+                                    <td><?php echo $p->harga_jual ?></td>
+                                    <td> <img src="<?php echo base_url('assets/gambar/' . $p->foto) ?>" alt="" style="width: 100px;"></td>
+                                    <td><?php echo $p->jenis_id ?></td>
+                                    <td><?php echo $p->deskripsi ?></td>
+                                    <td><?php echo anchor('index.php/produk/hapus/' . $p->id, '<button type="button" class="btn btn-danger">Delete</button>'); ?>
+                                        <a href="<?php echo base_url() . "index.php/produk/edit/" .
+                                                        $p->id ?>"> <button type="button" class="btn btn-info">update</button></a>
+                                    </td>
+                                </tr>
+                            <?php $a++;
+                            } ?>
+                        </tbody>
+                    </table>
 
                     <div class="row">
                         <div class="col-md-12">

@@ -60,12 +60,6 @@
                                 <input type="text" class='form-control' name='nama' value="<?php echo $jp->nama ?> "><br>
 
                             </div>
-                            <div class="form-grup">
-
-                                <label class='font-weight-bold'>Nama Jenis Produk</label>
-                                <input type="text" class='form-control' name='nama' value="<?php echo $jp->nama ?> "><br>
-
-                            </div>
 
                             <input type='submit' class='btn btn-primary mt-4' name='submit' value="Simpan">
 

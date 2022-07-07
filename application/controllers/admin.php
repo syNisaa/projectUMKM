@@ -10,7 +10,11 @@ class admin extends CI_Controller {
 	
  
 	function dashboard(){
-		$this->load->view('templateAdmin/index.php');
+		$data['totaljenisproduk'] = $this->modeluser->hitungJenis();
+		$data['totalsuplier'] = $this->modeluser->hitungSuplier();
+		$data['totalpesanan'] = $this->modeluser->hitungPesanan();
+		$data['totaluser'] = $this->modeluser->hitungUser();
+		$this->load->view('templateAdmin/index.php', $data);
 	}
 
 	function viewproduk(){

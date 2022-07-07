@@ -77,7 +77,7 @@
                                 <h4>UFassion </h4>
                                 <span>Bahan Premium &amp; Produksi Dalam Negri</span>
                                 <div class="main-border-button">
-                                    <a href="#">Gabung Sekarang!</a>
+                                    <a href="<?php echo base_url().'index.php/landing/formlogin'?>">Gabung Sekarang!</a>
                                 </div>
                             </div>
                             <img src="<?php echo base_url('assets/landing/assets/images/left-banner-image.jpg') ?>" alt="">
@@ -104,7 +104,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img src="<?php echo base_url('assets/landing/assets/images/baner-right-image-01.jpg') ?>">
+                                            <img src="<?php echo base_url('assets/gambar/banner.jfif') ?>" style="width: 300px; height: 260px;">
                                         </div>
                                     </div>
                                 </div>
@@ -144,7 +144,7 @@
                                                 <li><a href="<?php echo base_url() . "index.php/landing/formlogin" ?>"><i class="fa fa-sign-in"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="<?php echo base_url('assets/gambar/' . $p->foto) ?>" alt="">
+                                        <img src="<?php echo base_url('assets/gambar/' . $p->foto) ?>" alt="" style="height: 300px;">
                                     </div>
                                     <div class="down-content">
                                         <h4><?php echo $p->nama ?></h4>

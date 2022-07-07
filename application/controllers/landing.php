@@ -30,20 +30,6 @@ class landing extends CI_Controller
         $this->load->view('landing/formlogin.php');
     }
 
-    // function ceklogin()
-    // {
-    //     $username = $this->input->post('username');
-    //     $password =md5($this->input->post('password'));
-
-
-    //     $cek_admin = $this->modeluser->auth_admin($username, $password)->num_rows();
-    //     if ($cek_admin > 0) {
-    //         redirect('index.php/admin/dashboard');
-    //     } else {
-    //         // redirect('index.php/landing/formlogin');
-    //         echo $username, $password;
-    //     }
-    // }
 
     function ceklogin()
     {
@@ -73,9 +59,9 @@ class landing extends CI_Controller
                 redirect('index.php/user/userpublik');
             }
         } else {
-            echo $username,$password;
+            // echo $username,$password;
             $this->session->set_flashdata('message', 'Maaf Username Atau Password Yang Anda Masukan Salah!');
-            // redirect('index.php/landing/formlogin');
+            redirect('index.php/landing/formlogin');
         }
     }
 

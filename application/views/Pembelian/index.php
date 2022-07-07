@@ -50,24 +50,56 @@
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
-                    <!-- Info boxes -->
-                    hallo
-                    <!-- /.row -->
+                <div class="container-fluid"> <a href="<?php echo base_url() . "index.php/pembelian/tambah" ?>"><button type="button" class="btn btn-outline-success">Tambah Data</button></a><br>
+                    <div class="container-fluid">
+                        <!-- Info boxes -->
+                        <br><table table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">id </th>
+                                    <th scope="col">Tanggal</th>
+                                    <th scope="col">Jumlah</th>
+                                    <th scope="col">Harga</th>
+                                    <th scope="col">Produk_id</th>
+                                    <th scope="col">Suplier_id</th>
+                                    <th> Action </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $a = 1;
+                                foreach ($pembelian as $p) { ?>
+                                    <tr>
+                                        <th scope="row"><?php echo $a ?></th>
+                                        <td><?php echo $p->id ?></td>
+                                        <td><?php echo $p->tanggal ?></td>
+                                        <td><?php echo $p->jumlah ?></td>
+                                        <td><?php echo $p->harga ?></td>
+                                        <td><?php echo $p->produk_id ?></td>
+                                        <td><?php echo $p->suplier_id ?></td>
+                                        <td><?php echo anchor('index.php/pembelian/hapus/' . $p->id, '<button type="button" class="btn btn-danger">Delete</button>'); ?>
+                                           
+                                        </td>
+                                    </tr>
+                                <?php $a++;
+                                } ?>
+                            </tbody>
+                        </table>
+                        <!-- /.row -->
 
-                    <div class="row">
-                        <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
 
+                            </div>
+                            <!-- /.col -->
                         </div>
-                        <!-- /.col -->
+                        <!-- /.row -->
+
+                        <!-- Main row -->
+
+                        <!-- /.row -->
                     </div>
-                    <!-- /.row -->
-
-                    <!-- Main row -->
-
-                    <!-- /.row -->
-                </div>
-                <!--/. container-fluid -->
+                    <!--/. container-fluid -->
             </section>
             <!-- /.content -->
         </div>

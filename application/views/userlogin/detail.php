@@ -44,7 +44,8 @@
                             <li class="scroll-to-section"><a href="#men" class="active">Our Product</a></li>
 
                             <li class="scroll-to-section"><a href="#"><i>Your Order</i></a></li>
-                            <li class="scroll-to-section"><a href="#">Hallo, ,,,,!</a></li>
+                            <li class="scroll-to-section"><a href="#">Hallo, <?php echo $this->session->userdata('username') ?>!</a></li>
+                            <li class="scroll-to-section"><a href="<?php echo base_url() . 'index.php/landing/logout' ?>"><button class="btn btn-outline-danger">Logout</button></a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -106,13 +107,25 @@
                                 <h4><b>Stok Produk :</b> <?php echo $p1->stok ?></h4>
                                 <div class="right-content">
                                     <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                                        <form action="<?php echo base_url('index.php/pesanan/order') ?>" method='POST' enctype="multipart/form-data">
+                                            <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="+" name="jumlah" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
                                     </div>
                                 </div>
                             </div>
                             <div class="total">
                                 <h4>Total: <b id="total">35000</b></h4>
-                                <div class="main-border-button"><a href="<?php echo base_url().'index.php/user/myorder'?>">Buy</a></div>
+
+                                <div class="form-grup">
+                                    <input type="hidden" class='form-control' name='tanggal' value="<?php echo date("Y-m-d"); ?>"><br>
+                                    <input type="hidden" class='form-control' name='users_id' value="<?php echo $this->session->userdata('id') ?>"><br>
+                                    <input type="hidden" class='form-control' name='produk_id' value="<?php echo $p1->id?>"><br>
+
+                                </div>
+                                <div class="main-border-button">
+                                    <input type='submit' class='btn btn-outline-secondary mt-4' name='submit' value="Beli Sekarang">
+                                </div>
+                                </form>
+                                <!-- <a href="<?php echo base_url() . 'index.php/user/myorder' ?>">Buy</a> -->
                             </div>
 
                         </div>

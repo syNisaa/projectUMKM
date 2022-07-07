@@ -13,7 +13,7 @@
                 <img src="<?php echo base_url('assets/tadmin/dist/img/user2-160x160.jpg') ?>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Group One</a>
+                <a href="#" class="d-block">Group One | <?php echo $this->session->userdata('username') ?></a>
             </div>
         </div>
 
@@ -86,7 +86,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?php echo base_url() . "index.php/admin/viewproduk" ?>" class="nav-link">
+                            <a href="<?php echo base_url() . "index.php/produk/produk" ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Produk</p>
                             </a>
@@ -104,17 +104,16 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?php echo base_url() . "index.php/admin/viewpesanan" ?>" class="nav-link">
+                            <a href="<?php echo base_url() . "index.php/pesanan/pesanan" ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Pesanan</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/charts/flot.html<?php echo base_url() . "index.php/admin/viewpembelian" ?>ass=" far fa-circle nav-icon"></i>
+                            <a href="<?php echo base_url() . "index.php/pembelian/pembelian" ?> " class="nav-link"> <i class="far fa-circle nav-icon"></i>
                                 <p>Pembelian</p>
                             </a>
                         </li>
-
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -127,12 +126,17 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="<?php echo base_url() . "index.php/admin/viewsuplier" ?>" class="nav-link">
+                            <a href="<?php echo base_url() . "index.php/suplier/suplier" ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Suplier</p>
                             </a>
                         </li>
-
+                        <li class="nav-item">
+                            <a href="<?php echo base_url() . "index.php/user/user" ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>User Publik</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

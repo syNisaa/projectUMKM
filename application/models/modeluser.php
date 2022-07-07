@@ -4,7 +4,8 @@ class modeluser extends CI_Model
 {
 	function getUser()
 	{
-		return $this->db->get('users');
+		$query = $this->db->query("SELECT * FROM users WHERE role = 'publik'");
+		return $query;
 	}
 
 	function auth_admin($username, $password)
@@ -30,4 +31,41 @@ class modeluser extends CI_Model
         $this->db->insert('users', $data);
         redirect(base_url().'index.php/');
     }
+
+	public function hitungJenis(){
+		$query = $this->db->get('jenis_produk');
+		if ($query->num_rows()>0) {
+			return $query->num_rows();
+		} else {
+			return 0;
+		}
+	}
+
+	public function hitungSuplier(){
+		$query = $this->db->get('suplier');
+		if ($query->num_rows()>0) {
+			return $query->num_rows();
+		} else {
+			return 0;
+		}
+	}
+
+	public function hitungPesanan(){
+		$query = $this->db->get('pesanan');
+		if ($query->num_rows()>0) {
+			return $query->num_rows();
+		} else {
+			return 0;
+		}
+	}
+
+	public function hitungUser(){
+		$query = $this->db->get('users');
+		if ($query->num_rows()>0) {
+			return $query->num_rows();
+		} else {
+			return 0;
+		}
+	}
+
 }

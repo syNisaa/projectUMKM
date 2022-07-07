@@ -39,8 +39,8 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="<?php echo base_url()."index.php/admin/dashboard" ?>">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Suplier</li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url() . "index.php/admin/dashboard" ?>">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Jenis Suplier</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -50,10 +50,40 @@
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
-                    <!-- Info boxes -->
-                    hallo
-                    <!-- /.row -->
+                <div class="container-fluid"> <a href = "<?php echo base_url() . "index.php/suplier/tambah" ?>" ><button type="button" class="btn btn-outline-success">Tambah Data</button></a><br>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">id Suplier</th>
+                                <th scope="col">Nama Suplier</th>
+                                <th scope="col">Kota</th>
+                                <th scope="col">Kontak</th>
+                                <th scope="col">Alamat</th>
+                                <th scope="col">Telepon</th>
+                                <th> Action </th>
+                            </tr>
+                        </thead>
+                        <tbody> 
+                            <?php $a = 1;
+                            foreach ($suplier as $jp) { ?>
+                                <tr>
+                                    <th scope="row"><?php echo $a ?></th>
+                                    <td><?php echo $jp->id ?></td>
+                                    <td><?php echo $jp->nama ?></td>
+                                    <td><?php echo $jp->kota ?></td>
+                                    <td><?php echo $jp->kontak ?></td>
+                                    <td><?php echo $jp->alamat ?></td>
+                                    <td><?php echo $jp->telpon ?></td>
+                                    <td><?php echo anchor('index.php/suplier/hapus/'.$jp->id,
+                                    '<button type="button" class="btn btn-danger">Delete</button>'); ?>
+                                        <a href="<?php echo base_url() . "index.php/suplier/edit/".
+                                        $jp->id ?>"> <button type="button" class="btn btn-info">update</button></a>
+                                    </td>
+                                </tr>
+                            <?php $a++; } ?>
+                        </tbody>
+                    </table>
 
                     <div class="row">
                         <div class="col-md-12">

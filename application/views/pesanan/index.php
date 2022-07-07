@@ -50,10 +50,36 @@
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
-                    <!-- Info boxes -->
-                    hallo
-                    <!-- /.row -->
+                <div class="container-fluid"> 
+                    <!-- <a href = "<?php echo base_url() . "index.php/pesanan/tambah" ?>" ><button type="button" class="btn btn-outline-success">Tambah Data</button></a><br> -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">id Pesanan</th>
+                                <th scope="col">Tanggal Pesanan</th>
+                                <th scope="col">Jumlah Pesanan</th>
+                                <th scope="col">Users_id</th>
+                                <th scope="col">Produk_id</th>
+                                <th> Action </th>
+                            </tr>
+                        </thead>
+                        <tbody> 
+                            <?php $a = 1; foreach ($pesanan as $ps) { ?>
+                                <tr>
+                                    <th scope="row"><?php echo $a ?></th>
+                                    <td><?php echo $ps->id ?></td>
+                                    <td><?php echo $ps->tanggal ?></td>
+                                    <td><?php echo $ps->jumlah ?></td>
+                                    <td><?php echo $ps->users_id ?></td>
+                                    <td><?php echo $ps->produk_id ?></td>
+                                    <td><?php echo anchor('index.php/pesanan/hapus/'.$ps->id,'<button type="button" class="btn btn-danger">Delete</button>'); ?>
+                                    <a href="<?php echo base_url() . "index.php/pesanan/edit/".$ps->id ?>"> <button type="button" class="btn btn-info">update</button></a>
+                                    </td>
+                                </tr>
+                            <?php $a++; } ?>
+                        </tbody>
+                    </table>
 
                     <div class="row">
                         <div class="col-md-12">
